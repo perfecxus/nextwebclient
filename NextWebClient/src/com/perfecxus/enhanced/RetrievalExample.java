@@ -53,7 +53,7 @@ public class RetrievalExample {
 					// from the current language reference node, retrieve
 					// children of aLanguageType and aTranslatedValue types
 
-					System.out.println((langNode).value()
+					System.out.println("Hello World translation in "+(langNode).value()
 							+ " : "
 							+ (langNode.select(linkATranslatedValue)).get()
 									.value());
