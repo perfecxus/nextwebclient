@@ -56,6 +56,6 @@ public class HelloWorld {
 		System.out.println("URI of the network :" + nHelloWorld.uri());
 		System.out.println("URI of aTranslatedValue: " + aTranslatedValue.uri());
 		System.out.println("URI of aLanguageType: " + aLanguageType.uri());
-
+		session.close();
 	}
 }
