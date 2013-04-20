@@ -19,35 +19,34 @@ public class HelloWorld {
 		Node aLanguageType = session.seed("aLanguageType").get();
 		Node aTranslatedValue = session.seed(" aTranslatedValue").get();
 		// English Language node
-		Query english = helloWorld.append("english");
-		english.append("English").append(aLanguageType);
+		Query english = helloWorld.append("English");
+		english.append(aLanguageType);
 
 		english.append("HelloWorld").append(aTranslatedValue);
 
 		// German Language node
-		Query german = helloWorld.append("german");
-		german.append("German").append(aLanguageType);
-
+		Query german = helloWorld.append("German");
+		german.append(aLanguageType);
 		german.append("Hallo Welt").append(aTranslatedValue);
 
 		// Spanish Language node
-		Query spanish = helloWorld.append("spanish");
-		spanish.append("Spanish").append(aLanguageType);
+		Query spanish = helloWorld.append("Spanish");
+		spanish.append(aLanguageType);
 		spanish.append("Hola mundo").append(aTranslatedValue);
 
 		// French Language node
-		Query french = helloWorld.append("french");
-		french.append("French").append(aLanguageType);
+		Query french = helloWorld.append("French");
+		french.append(aLanguageType);
 		french.append("Bonjour tout le monde").append(aTranslatedValue);
 
 		// Italian Language node
-		Query italian = helloWorld.append("italian");
-		italian.append("Italian").append(aLanguageType);
+		Query italian = helloWorld.append("Italian");
+		italian.append(aLanguageType);
 		italian.append("Ciao mondo").append(aTranslatedValue);
 
 		// Danish Language node
-		Query danish = helloWorld.append("danish");
-		danish.append("Danish").append(aLanguageType);
+		Query danish = helloWorld.append("Danish");
+		danish.append(aLanguageType);
 		danish.append("Hej verdens").append(aTranslatedValue);
 
 		// Create the nodes in the cloud

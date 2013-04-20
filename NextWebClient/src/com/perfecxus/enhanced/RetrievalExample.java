@@ -12,27 +12,24 @@ import java.util.List;
 public class RetrievalExample {
 
 	/**
-	 * This program retrieves the Hello World translations created in the
+	 * This program retrieves the Hello World translations network created in the
 	 * HelloWorld example. Only the languages mentioned in the langArray are
 	 * retrieved
 	 */
 	public static void main(String[] args) {
 
-		String[] langArray = { "german", "spanish", "french", "italian",
-				"danish" };
+		String[] langArray = { "German", "Spanish", "French", "Italian",
+				"Danish" };
 
 		Session session = Nextweb.createSession();
 		// Load the seed node of our network using the uri
-		Link linkHelloWorld = session
-				.node("http://slicnet.com/seed1/seed1/5/9/9/3/h/sd");
+		Link linkHelloWorldNetwork = session
+				.node("http://slicnet.com/seed1/seed1/5/9/9/6/h/sd");
 
 		Link linkATranslatedValue = session
-				.node("http://slicnet.com/seed1/seed1/5/9/9/2/h/sd");
+				.node("http://slicnet.com/seed1/seed1/5/9/9/5/h/sd");
 
-		Link linkALanguageType = session
-				.node("http://slicnet.com/seed1/seed1/5/9/9/1/h/sd");
-
-		Node helloWorld = linkHelloWorld.get();
+		Node helloWorld = linkHelloWorldNetwork.get();
 		// select all children of the seed node
 		ListQuery allLangs = helloWorld.selectAll();
 		// get the node list from server
@@ -51,14 +48,12 @@ public class RetrievalExample {
 					// from the current language reference node, retrieve
 					// children of aLanguageType and aTranslatedValue types
 
-					System.out.println((langNode.select(linkALanguageType))
-							.get().value()
+					System.out.println((langNode).value()
 							+ " : "
 							+ (langNode.select(linkATranslatedValue)).get()
 									.value());
 
 				}
-
 			}
 		}
 	}
