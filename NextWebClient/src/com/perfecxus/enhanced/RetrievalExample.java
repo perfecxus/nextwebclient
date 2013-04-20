@@ -24,10 +24,10 @@ public class RetrievalExample {
 		Session session = Nextweb.createSession();
 		// Load the seed node of our network using the uri
 		Link linkHelloWorldNetwork = session
-				.node("http://slicnet.com/seed1/seed1/5/9/9/6/h/sd");
+				.node("http://slicnet.com/seed1/seed1/6/0/1/7/h/sd");
 
 		Link linkATranslatedValue = session
-				.node("http://slicnet.com/seed1/seed1/5/9/9/5/h/sd");
+				.node("http://slicnet.com/seed1/seed1/6/0/1/6/h/sd");
 
 		Node helloWorld = linkHelloWorldNetwork.get();
 		// select all children of the seed node
