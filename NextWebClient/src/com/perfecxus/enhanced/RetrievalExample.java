@@ -7,6 +7,8 @@ import io.nextweb.NodeList;
 import io.nextweb.Session;
 import io.nextweb.jre.Nextweb;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class RetrievalExample {
@@ -18,16 +20,21 @@ public class RetrievalExample {
 	 */
 	public static void main(String[] args) {
 
-		String[] langArray = { "German", "Spanish", "French", "Italian",
-				"Danish" };
+		if(args.length<3){
+			System.out.println("Please pass proper program arguments. The arguments should be in the format: \n <URI of Hello World Network> <URI of aTranslatedValue> <lang1> <lang2>...");
+			
+			System.exit(0);
+		}
+		
+		List<String> langArray = Arrays.asList(args).subList(2, args.length);
 
 		Session session = Nextweb.createSession();
 		// Load the seed node of our network using the uri
 		Link linkHelloWorldNetwork = session
-				.node("http://slicnet.com/seed1/seed1/6/0/1/7/h/sd");
+				.node(args[0]); 
 
 		Link linkATranslatedValue = session
-				.node("http://slicnet.com/seed1/seed1/6/0/1/6/h/sd");
+				.node(args[1]); 
 
 		Node helloWorld = linkHelloWorldNetwork.get();
 		// select all children of the seed node
@@ -35,16 +42,14 @@ public class RetrievalExample {
 		// get the node list from server
 		NodeList resolvedChildNodes = allLangs.get();
 
-		List list = resolvedChildNodes.asList();
+		List<Node> list = resolvedChildNodes.asList();
 		// Loop through all the children nodes , print only the ones in the
 		// language array langList
-		for (int i = 0; i < list.size(); i++) {
+		for (Node langNode: list) {
 
-			Node langNode = (Node) list.get(i);
+			for (String language: langArray) {
 
-			for (int j = 0; j < langArray.length; j++) {
-
-				if (langArray[j].equals((String) langNode.value())) {
+				if (language.equals((String) langNode.value())) {
 					// from the current language reference node, retrieve
 					// children of aLanguageType and aTranslatedValue types
 
@@ -56,6 +61,7 @@ public class RetrievalExample {
 				}
 			}
 		}
+		session.close();
 	}
 
 }

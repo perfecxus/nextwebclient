@@ -17,7 +17,9 @@ public class HelloWorld {
 
 		// add value
 		Node aLanguageType = session.seed("aLanguageType").get();
+		aLanguageType.append("This denotes a property Language type", "./aLanguageType");
 		Node aTranslatedValue = session.seed(" aTranslatedValue").get();
+		aTranslatedValue.append("This denotesa Translation value type ", "./aTranslatedValue");
 		// English Language node
 		Query english = helloWorld.append("English");
 		english.append(aLanguageType);
