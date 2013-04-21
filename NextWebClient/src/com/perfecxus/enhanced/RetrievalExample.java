@@ -33,7 +33,7 @@ import java.util.List;
  * 	<URI of Hello World Network> <URI of aTranslatedValue> <lang1> <lang2>...
  * 
  * For example: To retrieve a translation in German and Danish language for a Hello World network, the program arguments should be he following:
- * 	"http://slicnet.com/seed1/seed1/6/0/4/2/h/sd" "http://slicnet.com/seed1/seed1/6/0/4/1/h/sd" "German" "Danish"
+ * 	"http://slicnet.com/seed1/seed1/6/0/5/2/h/sd" "http://slicnet.com/seed1/seed1/6/0/5/1/h/sd" "German" "Danish"
  */
 
 public class RetrievalExample {
