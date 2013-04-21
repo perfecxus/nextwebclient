@@ -44,7 +44,7 @@ public class HelloWorld {
 		Query english = helloWorld.append("English");
 		english.append(aLanguageType);
 
-		english.append("HelloWorld").append(aTranslatedValue);
+		english.append("Hello World").append(aTranslatedValue);
 
 		// German Language node
 		Query german = helloWorld.append("German");
@@ -62,9 +62,9 @@ public class HelloWorld {
 		french.append("Bonjour tout le monde").append(aTranslatedValue);
 
 		// Italian Language node
-		Query italian = helloWorld.append("Italian");
+		Query italian = helloWorld.append("Latin");
 		italian.append(aLanguageType);
-		italian.append("Ciao mondo").append(aTranslatedValue);
+		italian.append("salve mundi").append(aTranslatedValue);
 
 		// Danish Language node
 		Query danish = helloWorld.append("Danish");
