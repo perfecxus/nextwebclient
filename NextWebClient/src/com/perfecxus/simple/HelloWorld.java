@@ -28,7 +28,7 @@ public class HelloWorld {
     public static void main(String[] args) {
         Session session = Nextweb.createSession();
 
-        Query hello = session.seed().append("Hello, Java!");
+        Query hello = session.seed().append("Hello World");
 
         System.out.println("Created:\n"+hello.get());
 
